@@ -138,4 +138,12 @@
   @media (min-width: breakpoint.$desktop) {
     display: flex;
   }
+
+  img {
+    transition: transform 0.25s ease-in-out;
+  }
+}
+
+.collapseMenuItemActive img {
+  transform: rotate(180deg);
 }
