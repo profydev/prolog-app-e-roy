@@ -47,6 +47,12 @@ export function SidebarNavigation() {
             alt="logo"
             className={styles.logo}
           />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/icons/logo-large.svg"
+            alt="logo"
+            className={styles.logoMobile}
+          />
           <Button
             onClick={() => setMobileMenuOpen(!isMobileMenuOpen)}
             className={styles.menuButton}

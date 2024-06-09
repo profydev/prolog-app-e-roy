@@ -1,5 +1,6 @@
 @use "@styles/color";
 @use "@styles/space";
+@use "@styles/breakpoint";
 
 .listItem {
   height: space.$s12;
@@ -29,4 +30,20 @@
 .icon {
   width: space.$s6;
   margin-right: space.$s3;
+}
+
+.textMobile {
+  display: block;
+
+  @media (min-width: breakpoint.$desktop) {
+    display: none;
+  }
+}
+
+.textDesktop {
+  display: none;
+
+  @media (min-width: breakpoint.$desktop) {
+    display: block;
+  }
 }
