@@ -22,7 +22,7 @@ export function SidebarNavigation() {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleEmailSupport = () => {
-    const mailtoLink = `mailto:support@prolog-app.com?subject=Support Request`;
+    const mailtoLink = `mailto:support@prolog-app.com?subject=Support Request:`;
     window.location.href = mailtoLink;
   };
 
