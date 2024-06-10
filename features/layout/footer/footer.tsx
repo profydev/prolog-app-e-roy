@@ -1,6 +1,5 @@
 import { FooterRoutes } from "@config/routes";
 import styles from "./footer.module.scss";
-import packageJson from "../../../package.json";
 
 const menuItems = [
   { text: "Docs", href: FooterRoutes.docs },
@@ -13,7 +12,7 @@ export function Footer() {
   return (
     <footer id="footer-nav" className={styles.container}>
       <div className={styles.version} data-cy="footer-version">
-        Version: {packageJson.version}
+        Version: {process.env.appVersion}
       </div>
       <div className={styles.linkItems}>
         {menuItems.map((item) => (
