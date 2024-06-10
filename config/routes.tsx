@@ -6,3 +6,10 @@ export const Routes = {
   users: "/dashboard/users",
   settings: "/dashboard/settings",
 };
+
+export const FooterRoutes = {
+  docs: "#",
+  api: "#",
+  help: "#",
+  community: "#",
+};

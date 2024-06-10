@@ -24,6 +24,11 @@
     },
     "noEmit": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "cypress/plugins/index.js"
+  ],
   "exclude": ["node_modules", "cypress", "cypress.config.ts"]
 }
