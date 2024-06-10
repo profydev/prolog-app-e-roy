@@ -11,7 +11,7 @@ const menuItems = [
 
 export function Footer() {
   return (
-    <div id="footer-nav" className={styles.container}>
+    <footer id="footer-nav" className={styles.container}>
       <div className={styles.version} data-cy="footer-version">
         Version: {packageJson.version}
       </div>
@@ -36,6 +36,6 @@ export function Footer() {
           data-cy="footer-logo"
         />
       </div>
-    </div>
+    </footer>
   );
 }

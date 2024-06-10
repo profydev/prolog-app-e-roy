@@ -1,6 +1,7 @@
 @use "@styles/color";
 @use "@styles/space";
 @use "@styles/breakpoint";
+@use "@styles/font";
 
 .anchor {
   align-items: center;
@@ -8,6 +9,7 @@
   text-decoration: none;
   padding: space.$s6;
   margin: auto 0;
+  font: font.$text-md-medium;
 }
 
 .container {
@@ -27,7 +29,7 @@
 }
 
 .linkItems {
-  margin: auto 0;
+  margin: auto;
   gap: space.$s2;
 }
 
