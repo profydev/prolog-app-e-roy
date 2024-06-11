@@ -1,7 +1,7 @@
 import { ProjectCard } from "../project-card";
 import { useGetProjects } from "../../api/use-get-projects";
-import styles from "./project-list.module.scss";
 import { Loading } from "@features/ui";
+import styles from "./project-list.module.scss";
 
 export function ProjectList() {
   const { data, isLoading, isError, error } = useGetProjects();
@@ -16,7 +16,7 @@ export function ProjectList() {
   }
 
   return (
-    <ul className={styles.list}>
+    <ul className={styles.list} data-cy="project-list">
       {data?.map((project) => (
         <li key={project.id}>
           <ProjectCard project={project} />
