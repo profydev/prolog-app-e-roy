@@ -86,5 +86,30 @@ describe("Issue List", () => {
       cy.wait(1500);
       cy.contains("Page 2 of 3");
     });
+
+    it("displays AlertMessage on error", () => {
+      // simulate an error response from the API
+      cy.intercept("GET", "https://prolog-api.profy.dev/project", {
+        statusCode: 500,
+        body: {
+          message: "Internal Server Error",
+        },
+      });
+
+      cy.visit(`http://localhost:3000/dashboard`);
+
+      cy.get('[data-cy="alert-message"]', { timeout: 10000 }).should(
+        "be.visible",
+      );
+      cy.get('[data-cy="alert-message"]').contains("Try again");
+
+      cy.get('[data-cy="alert-message"] button').click();
+
+      cy.intercept("GET", "https://prolog-api.profy.dev/project", {
+        fixture: "projects.json",
+      });
+
+      cy.get('[data-cy="project-list"]').should("be.visible");
+    });
   });
 });

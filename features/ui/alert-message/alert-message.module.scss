@@ -1,0 +1,43 @@
+@use "@styles/color";
+@use "@styles/font";
+@use "@styles/space";
+
+.container {
+  display: flex;
+  width: 98%;
+  color: color.$error-700;
+  font: font.$text-sm-medium;
+  padding: 16px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-radius: 8px;
+  border: 1px solid color.$error-300;
+  background: color.$error-25;
+}
+
+.message {
+  align-items: flex-start;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+.button {
+  width: 105px;
+  display: flex;
+  align-items: flex-start;
+  color: color.$error-700;
+  border: none;
+  background: none;
+  gap: 8px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.arrow {
+  width: 20px;
+  height: 20px;
+}
