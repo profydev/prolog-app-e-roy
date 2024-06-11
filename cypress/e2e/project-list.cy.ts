@@ -13,30 +13,22 @@ describe("Project List", () => {
     // setup request mock
     cy.intercept("GET", "https://prolog-api.profy.dev/project", {
       fixture: "projects.json",
-    }).as("getProjects");
+    });
 
     // open projects page
     cy.visit("http://localhost:3000/dashboard");
+  });
 
-    // wait for request to resolve
-    cy.wait("@getProjects");
+  it("renders loading spinner", () => {
+    cy.get('[data-cy="spinner"]').should("be.visible");
+
+    cy.get('[data-cy="project-list"]').should("be.visible");
+    cy.get('[data-cy="spinner"]').should("not.exist");
   });
 
   context("desktop resolution", () => {
     beforeEach(() => {
       cy.viewport(1025, 900);
-    });
-
-    it("renders loading spinner", () => {
-      cy.intercept("GET", "https://prolog-api.profy.dev/project", {
-        delayMs: 500,
-        fixture: "projects.json",
-      });
-
-      cy.visit(`http://localhost:3000/dashboard`);
-
-      cy.get('[data-cy="spinner"]').should("be.visible");
-      cy.get('[data-cy="spinner"]').should("not.exist");
     });
 
     it("renders the projects", () => {

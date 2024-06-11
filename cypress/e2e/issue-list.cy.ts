@@ -20,19 +20,22 @@ describe("Issue List", () => {
 
     // open issues page
     cy.visit(`http://localhost:3000/dashboard/issues`);
+  });
 
-    // wait for request to resolve
-    cy.wait(["@getProjects", "@getIssuesPage1"]);
-    cy.wait(500);
+  it("renders loading spinner", () => {
+    cy.get('[data-cy="spinner"]').should("be.visible");
 
-    // set button aliases
-    cy.get("button").contains("Previous").as("prev-button");
-    cy.get("button").contains("Next").as("next-button");
+    cy.get('[data-cy="issues-list"]').should("be.visible");
+    cy.get('[data-cy="spinner"]').should("not.exist");
   });
 
   context("desktop resolution", () => {
     beforeEach(() => {
       cy.viewport(1025, 900);
+
+      // set button aliases
+      cy.get("button").contains("Previous").as("prev-button");
+      cy.get("button").contains("Next").as("next-button");
     });
 
     it("renders the issues", () => {
