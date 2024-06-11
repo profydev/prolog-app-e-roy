@@ -2,7 +2,6 @@ import { ProjectCard } from "../project-card";
 import { useGetProjects } from "../../api/use-get-projects";
 import { Loading } from "@features/ui";
 import styles from "./project-list.module.scss";
-import { Loading } from "@features/ui";
 
 export function ProjectList() {
   const { data, isLoading, isError, error } = useGetProjects();
