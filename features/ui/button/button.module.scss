@@ -14,13 +14,21 @@
   -webkit-font-smoothing: inherit;
   -moz-osx-font-smoothing: inherit;
   appearance: none;
+  display: flex;
+  gap: space.$s2;
 
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
   }
 
-  // Colors
+  /* Image */
+  img {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Colors */
 
   &.primary,
   &.secondary,
@@ -34,7 +42,7 @@
     color: white;
     border: 1px solid color.$primary-600;
 
-    // States
+    /* States */
     &:hover {
       background-color: color.$primary-700;
       border: 1px solid color.$primary-700;
@@ -56,7 +64,7 @@
     color: color.$primary-700;
     border: 1px solid color.$primary-50;
 
-    // States
+    /* States */
     &:hover {
       background-color: color.$primary-100;
       border: 1px solid color.$primary-100;
@@ -79,7 +87,7 @@
     color: color.$gray-700;
     border: 1px solid color.$gray-300;
 
-    // States
+    /* States */
     &:hover {
       background-color: color.$gray-50;
       border: 1px solid color.$gray-300;
@@ -99,7 +107,7 @@
   &.empty {
     color: color.$primary-700;
 
-    // States
+    /* States */
     &:hover {
       background-color: color.$primary-50;
     }
@@ -112,7 +120,7 @@
   &.emptyGray {
     color: color.$gray-500;
 
-    // States
+    /* States */
     &:hover {
       background-color: color.$gray-50;
       color: color.$gray-600;
@@ -128,7 +136,7 @@
     color: white;
     border: 1px solid color.$error-600;
 
-    // States
+    /* States */
     &:hover {
       background-color: color.$error-700;
       border: 1px solid color.$error-700;
@@ -148,7 +156,7 @@
   &.emptyError {
     color: color.$error-700;
 
-    // States
+    /* States */
     &:hover {
       background-color: color.$error-50;
     }
@@ -158,7 +166,7 @@
     }
   }
 
-  // Sizes
+  /* Sizes */
 
   &.sm,
   &.md,
@@ -187,3 +195,8 @@
     font: font.$text-md-medium;
   }
 }
+
+// .button img {
+//   display: flex;
+//   align-items: center;
+// }

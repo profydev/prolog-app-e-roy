@@ -29,25 +29,17 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  (
-    {
-      color = ButtonColor.primary,
-      size = ButtonSize.md,
-      disabled = false,
-      ...props
-    },
-    ref,
-  ) => {
+  ({ color, size, disabled = false, ...props }, ref) => {
     return (
       <button
+        {...props}
         className={classNames(
-          styles[color],
-          styles[size],
           styles.button,
+          styles[color!],
+          styles[size!],
           props.className,
         )}
         ref={ref}
-        {...props}
         disabled={disabled}
       >
         {props.children}
@@ -55,4 +47,5 @@ export const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     );
   },
 );
+
 Button.displayName = "Button";
