@@ -1,3 +1,7 @@
+@use "@styles/color";
+@use "@styles/font";
+@use "@styles/space";
+
 .button {
   cursor: pointer;
 
@@ -10,9 +14,189 @@
   -webkit-font-smoothing: inherit;
   -moz-osx-font-smoothing: inherit;
   appearance: none;
+  display: flex;
+  gap: space.$s2;
 
   &::-moz-focus-inner {
     border: 0;
     padding: 0;
   }
+
+  /* Image */
+  img {
+    display: flex;
+    align-items: center;
+  }
+
+  /* Colors */
+
+  &.primary,
+  &.secondary,
+  &.gray,
+  &.error {
+    box-shadow: 0 1px 2px 0 #1018280d;
+  }
+
+  &.primary {
+    background-color: color.$primary-600;
+    color: white;
+    border: 1px solid color.$primary-600;
+
+    /* States */
+    &:hover {
+      background-color: color.$primary-700;
+      border: 1px solid color.$primary-700;
+    }
+
+    &:focus {
+      outline: 4px solid color.$primary-100;
+      border: 1px solid color.$primary-100;
+    }
+
+    &:disabled {
+      background-color: color.$primary-200;
+      border: 1px solid color.$primary-200;
+    }
+  }
+
+  &.secondary {
+    background-color: color.$primary-50;
+    color: color.$primary-700;
+    border: 1px solid color.$primary-50;
+
+    /* States */
+    &:hover {
+      background-color: color.$primary-100;
+      border: 1px solid color.$primary-100;
+    }
+
+    &:focus {
+      outline: 4px solid color.$primary-100;
+      border: 1px solid color.$primary-100;
+    }
+
+    &:disabled {
+      color: color.$primary-300;
+      background-color: color.$primary-25;
+      border: 1px solid color.$primary-25;
+    }
+  }
+
+  &.gray {
+    background-color: white;
+    color: color.$gray-700;
+    border: 1px solid color.$gray-300;
+
+    /* States */
+    &:hover {
+      background-color: color.$gray-50;
+      border: 1px solid color.$gray-300;
+    }
+
+    &:focus {
+      outline: 4px solid color.$gray-100;
+      border: 1px solid color.$gray-300;
+    }
+
+    &:disabled {
+      color: color.$gray-300;
+      border: 1px solid color.$gray-200;
+    }
+  }
+
+  &.empty {
+    color: color.$primary-700;
+
+    /* States */
+    &:hover {
+      background-color: color.$primary-50;
+    }
+
+    &:disabled {
+      color: color.$gray-300;
+    }
+  }
+
+  &.emptyGray {
+    color: color.$gray-500;
+
+    /* States */
+    &:hover {
+      background-color: color.$gray-50;
+      color: color.$gray-600;
+    }
+
+    &:disabled {
+      color: color.$gray-300;
+    }
+  }
+
+  &.error {
+    background-color: color.$error-600;
+    color: white;
+    border: 1px solid color.$error-600;
+
+    /* States */
+    &:hover {
+      background-color: color.$error-700;
+      border: 1px solid color.$error-700;
+    }
+
+    &:focus {
+      outline: 4px solid color.$error-100;
+      border: 1px solid color.$error-100;
+    }
+
+    &:disabled {
+      background-color: color.$error-200;
+      border: 1px solid color.$error-200;
+    }
+  }
+
+  &.emptyError {
+    color: color.$error-700;
+
+    /* States */
+    &:hover {
+      background-color: color.$error-50;
+    }
+
+    &:disabled {
+      color: color.$error-300;
+    }
+  }
+
+  /* Sizes */
+
+  &.sm,
+  &.md,
+  &.lg,
+  &.xl {
+    border-radius: space.$s2;
+  }
+
+  &.sm {
+    padding: space.$s2 space.$s3-5;
+    font: font.$text-sm-medium;
+  }
+
+  &.md {
+    padding: space.$s2-5 space.$s4;
+    font: font.$text-sm-medium;
+  }
+
+  &.lg {
+    padding: space.$s2-5 space.$s4-5;
+    font: font.$text-md-medium;
+  }
+
+  &.xl {
+    padding: space.$s3 space.$s5;
+    font: font.$text-md-medium;
+  }
 }
+
+// .button img {
+//   display: flex;
+//   align-items: center;
+// }
